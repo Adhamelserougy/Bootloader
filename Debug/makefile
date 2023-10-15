@@ -13,6 +13,8 @@ ORDERED_OBJS += \
 "./main.obj" \
 "./tm4c123gh6pm_startup_ccs.obj" \
 "./Application/Program.obj" \
+"./HAL/EEPROM_Drivers/EEPROM.obj" \
+"./HAL/Hex_Recieve/Hex_Recieve.obj" \
 "C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/ccs/Debug/driverlib.lib" \
 "../tm4c123gh6pm.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -27,8 +29,12 @@ RMDIR := RMDIR /S/Q
 -include sources.mk
 -include subdir_vars.mk
 -include Application/subdir_vars.mk
+-include HAL/EEPROM_Drivers/subdir_vars.mk
+-include HAL/Hex_Recieve/subdir_vars.mk
 -include subdir_rules.mk
 -include Application/subdir_rules.mk
+-include HAL/EEPROM_Drivers/subdir_rules.mk
+-include HAL/Hex_Recieve/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -146,9 +152,9 @@ Bootloader.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main.obj" "tm4c123gh6pm_startup_ccs.obj" "Application\Program.obj" 
-	-$(RM) "main.d" "tm4c123gh6pm_startup_ccs.d" "Application\Program.d" 
-	-$(RM) "main.asm" "tm4c123gh6pm_startup_ccs.asm" "Application/Program.asm" 
+	-$(RM) "main.obj" "tm4c123gh6pm_startup_ccs.obj" "Application\Program.obj" "HAL\EEPROM_Drivers\EEPROM.obj" "HAL\Hex_Recieve\Hex_Recieve.obj" 
+	-$(RM) "main.d" "tm4c123gh6pm_startup_ccs.d" "Application\Program.d" "HAL\EEPROM_Drivers\EEPROM.d" "HAL\Hex_Recieve\Hex_Recieve.d" 
+	-$(RM) "main.asm" "tm4c123gh6pm_startup_ccs.asm" "Application/Program.asm" "HAL/EEPROM_Drivers/EEPROM.asm" "HAL/Hex_Recieve/Hex_Recieve.asm" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

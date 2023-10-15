@@ -113,4 +113,6 @@ PDE_DEPS__QUOTED :=
 SUBDIRS := \
 . \
 Application \
+HAL/EEPROM_Drivers \
+HAL/Hex_Recieve \
 
